@@ -11,9 +11,9 @@
 
 		<title>{% block title %}Рибалка{% endblock %}</title>
 		
-		<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">	
+		<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
 		<link rel="stylesheet" href="{% static 'css/_header.min.css' %}">
-        <link rel="stylesheet" href="{% static 'css/_main.min.css' %}">
+        {% block main_style %} {% endblock %}
         <link rel="stylesheet" href="{% static 'css/_footer.min.css' %}">
 
 	</head>
