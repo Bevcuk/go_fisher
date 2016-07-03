@@ -1,0 +1,55 @@
+{% load staticfiles %}
+
+<div class="pre-topline">
+	<div class="container">
+		<div class="col-md-push-6 col-md-6">
+			<div class="contacts">
+				<div class="phone" style="background-image: url({% static 'img/phone.png' %});">(0 800) 502 181</div>
+				<div class="phone" style="background-image: url({% static 'img/mobile.png' %});">(066) 857 05 22</div>
+				<div class="callback" style="background-image: url({% static 'img/callback.png' %});">Замовити дзвінок</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="top-line">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-1 hidden-lg hidden-md col-xs-1">
+				<div class="mobile-mnu">
+					<div class="toggle-mnu hidden-lg"><span></span></div>
+				</div>
+			</div>
+
+			<div class="mobile-search col-sm-2 hidden-lg hidden-md col-xs-2">
+				<img src="{% static 'img/mobile-search.png' %}" alt="search" class="m-search" width="35" height="35"/>
+			</div>
+			
+			<div class="col-md-4 col-lg-3 col-sm-5 col-xs-3">
+				<div class="logo">
+					<a href="/"><img src="{% static 'img/logo.png' %}" alt="Рибалка"></a>		
+					</div>
+			</div>
+			<div class="col-md-5 col-lg-6 col-sm-4 hidden-sm hidden-xs ">
+				<form class="form-wrapper">
+					<div class="search">
+						<input type="text" placeholder="Пошук товарів">
+						<!-- !!!! -->
+						<button type="submit"><a href="/" class="icon-find">
+							<img src="{% static 'img/serch.png' %}" alt=""></a>
+						</button>
+					</div>
+				</form>
+			</div>
+			<div class="col-md-3 col-lg-3 col-sm-4 col-xs-5">
+				
+				<a href="/" class="basket">
+					<div class="counter">4</div>
+					<img src="{% static 'img/basket2.png' %}" alt="basket" /></a>
+					<div class="enter" style="background-image: url({% static 'img/icons/enter.png' %});">
+					<a href="/">Увійти</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

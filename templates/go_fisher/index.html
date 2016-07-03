@@ -1,0 +1,225 @@
+{% extends "__base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+	<div class="baner-section" style="background-image: url({% static 'img/img-5.jpg' %}); ">
+		<div class="col-md-10 col-md-push-1 col-sm-10 col-sm-push-1 hidden-xs wpr-baner">
+			<div class="col-md-8 col-md-push-2 col-sm-8 col-sm-push-2 baner">
+				<ul>
+					<li class="resp-w-item">
+						<div class="item">
+							<div class="img-wp col-md-5 col-sm-5">
+								<img src="{% static 'img/goods/loo.png' %}" alt="">
+							</div>
+							<div class="info-details col-md-7 col-sm-7">
+								<h1>Знижка <span>- 25%</span></h1>
+								<h2>на всі котушки фірми <b>Mikado</b></h2>
+								<h3>Пропозиція діє до <span>30.05</span></h3>
+								<a href="/">Переглянути</a>
+							</div>
+						</div>
+					</li>
+					<li class="resp-w-item">
+						<div class="item">
+							<div class="img-wp col-md-5 col-sm-5">
+								<img src="{% static 'img/goods/loo.png' %}" alt="">
+							</div>
+							<div class="info-details col-md-7 col-sm-7">
+								<h1>Знижка <span>- 26%</span></h1>
+								<h2>на всі котушки фірми <b>Mikado</b></h2>
+								<h3>Пропозиція діє до <span>30.05</span></h3>
+								<a href="/">Переглянути</a>
+							</div>
+						</div>
+					</li>
+					<li class="resp-w-item">
+						<div class="item">
+							<div class="img-wp col-md-5 col-sm-5">
+								<img src="{% static 'img/goods/loo.png' %}" alt="">
+							</div>
+							<div class="info-details col-md-7 col-sm-7">
+								<h1>Знижка <span>- 27%</span></h1>
+								<h2>на всі котушки фірми <b>Mikado</b></h2>
+								<h3>Пропозиція діє до <span>30.05</span></h3>
+								<a href="/">Переглянути</a>
+							</div>
+						</div>
+					</li>
+											
+				</ul>
+			</div>
+			<div class="slider-nav">
+				<button data-dir="prev" class="l-arrow"></button>
+				<button data-dir="next" class="r-arrow"></button>
+			</div>
+		</div>
+	</div>
+	<div class="categories">
+		<div class="container">
+			<div class="row">
+				<div class="category-title">Відбір по категорії</div>
+				<div class="subcategory-section col-md-3 col-sm-3 col-lg-3 col-xs-5">
+					<div class="subcategory-item ">
+						<a href="/" class="subc-a"><img src="{% static 'img/categories/fish-udo4g5.png' %}" alt="category"></a>
+						<a href="/" class="subc-name">Риболовні снасті</a>
+						<a href="/" class="subc-s-item">Вудилища</a>
+						<a href="/" class="subc-s-item">Котушки</a>
+						<a href="/" class="subc-s-item">Садки</a>
+						<a href="/" class="subc-s-item">Сигналізатори клюву</a>
+						<a href="/" class="subc-s-item">Спецінструменти</a>
+					</div>		
+				</div>
+				<div class="subcategory-section col-md-3 col-sm-3 col-lg-3 col-xs-5 ">
+					<div class="subcategory-item">
+						<a href="/" class="subc-a"><img src="{% static 'img/categories/fish-montajvz.png' %}" alt="category"></a>
+						<a href="/" class="subc-name">Оснащення</a>
+						<a href="/" class="subc-s-item">Крючки</a>
+						<a href="/" class="subc-s-item">Грузила</a>
+						<a href="/" class="subc-s-item">Поплавки</a>
+						<a href="/" class="subc-s-item">Поплавки</a>
+						<a href="/" class="subc-s-item">Джиг-головки</a>
+						<a href="/" class="subc-s-item">Карабіни і застібки</a>
+						<a href="/" class="subc-s-item">Повідки для хижаків</a>
+					</div>		
+				</div>
+				<div class="subcategory-section col-md-3 col-sm-3 col-lg-3 col-xs-5">
+					<div class="subcategory-item">
+						<a href="/" class="subc-a"><img src="{% static 'img/categories/fish-primanww.png' %}" alt="category"></a>
+						<a href="/" class="subc-name">Приманки і прикормки</a>
+						<a href="/" class="subc-s-item">Мормишки</a>
+						<a href="/" class="subc-s-item">Балансири</a>
+						<a href="/" class="subc-s-item">Воблери</a>
+						<a href="/" class="subc-s-item">Силікон</a>
+						<a href="/" class="subc-s-item">Прикормки</a>
+						<a href="/" class="subc-s-item">Сухі добавки</a>
+						<a href="/" class="subc-s-item">Спреї</a>
+					</div>		
+				</div>
+				<div class="subcategory-section col-md-3 col-sm-3 col-lg-3 col-xs-5">
+					<div class="subcategory-item">
+						<a href="/" class="subc-a"><img src="{% static 'img/categories/fish-boat-komve.png' %}" alt="category"></a>
+						<a href="/" class="subc-name">Аксесуари риболовні</a>
+						<a href="/" class="subc-s-item">Збереження і транспортування</a>
+						<a href="/" class="subc-s-item">Ехолоти</a>
+						<a href="/" class="subc-s-item">Карпові кораблики</a>
+						<a href="/" class="subc-s-item">Полотенця і фартухи</a>
+						<a href="/" class="subc-s-item">Кобри, ракети і рогатки</a>
+						<a href="/" class="subc-s-item">Надувні човни</a>
+					</div>		
+				</div>
+			</div>
+		</div>
+	</div>
+    <div class="kinds">
+        <div class="container">
+            <div class="row">
+                <div class="kind-title col-md-12 col-lg-12 col-sm-12">Відбір за призначенням</div>
+
+                    <div class="kind-section col-lg-12 col-md-12">
+                        <div class="kind">
+                        <figure class="subkind-item">
+                            <a href="/" class="subk-a"><img src="{% static 'img/kinds/kind-6.png' %}" alt="kind"></a>
+                            <figcaption><a href="/" class="subk-name">Карпова <br> ловля</a></figcaption>
+                        </figure>
+
+                        <figure class="subkind-item">
+                        <a href="/" class="subk-a"><img src="{% static 'img/kinds/kind-1.png' %}" alt="kind"></a>
+                        <figcaption><a href="/" class="subk-name">Спінінгова <br> ловля</a></figcaption>
+                        </figure>
+
+
+                        <figure class="subkind-item ">
+                            <a href="/" class="subk-a"><img src="{% static 'img/kinds/kind-3.png' %}" alt="kind"></a>
+                            <figcaption><a href="/" class="subk-name">Поплавочна <br> ловля</a></figcaption>
+                        </figure>
+
+                        <figure class="subkind-item ">
+                            <a href="/" class="subk-a"><img src="{% static 'img/kinds/kind-4.png' %}" alt="kind"></a>
+                            <figcaption><a href="/" class="subk-name">Кастингова <br> ловля</a></figcaption>
+                    </figure>
+
+                        <figure class="subkind-item ">
+                            <a href="/" class="subk-a"><img src="{% static 'img/kinds/kind-2.png' %}" alt="kind"></a>
+                            <figcaption><a href="/" class="subk-name">Фідерна <br> ловля</a></figcaption>
+                    </figure>
+
+                        <figure class="subkind-item ">
+                            <a href="/" class="subk-a"><img src="{% static 'img/kinds/kind-5.png' %}" alt="kind"></a>
+                            <figcaption><a href="/" class="subk-name">Нахлистова <br> ловля</a></figcaption>
+                    </figure>
+                        <figure class="subkind-item ">
+                            <a href="/" class="subk-a"><img src="{% static 'img/kinds/kind-7.png' %}" alt="kind"></a>
+                            <figcaption><a href="/" class="subk-name">Морська <br> ловля</a></figcaption>
+                        </figure>
+                        <figure class="subkind-item ">
+                        <a href="/" class="subk-a"><img src="{% static 'img/kinds/kind-8.png' %}" alt="kind"></a>
+                        <figcaption><a href="/" class="subk-name">Зимня <br>ловля</a></figcaption>
+                    </figure>
+                </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="capital-stock">
+        <div class="container">
+            <div class="row">
+                <div class="stock-title">Акції</div>
+                {% include '_product.html' %}
+                {% include '_product.html' %}
+                {% include '_product.html' %}
+                {% include '_product.html' with hidden='hidden-sm' %}
+            </div>
+        </div>
+    </div>
+    <div class="new">
+        <div class="container">
+            <div class="row">
+                <div class="stock-title">Новинки</div>
+                {% include '_product.html' %}
+                {% include '_product.html' %}
+                {% include '_product.html' %}
+                {% include '_product.html' with hidden='hidden-sm'%}
+                {% include '_product.html' %}
+                {% include '_product.html' %}
+                {% include '_product.html' %}
+                {% include '_product.html' with hidden='hidden-sm'%}
+            </div>
+        </div>
+    </div>
+    <div class="popular">
+        <div class="container">
+            <div class="row">
+                <div class="stock-title">Популярні товари</div>
+                {% include '_product.html' %}
+                {% include '_product.html' %}
+                {% include '_product.html' %}
+                {% include '_product.html' with hidden='hidden-sm' %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block rel_scripts %}
+<script type="text/javascript" src="{%  static 'js/slider.js'%}"></script>
+
+<script>
+	(function() {
+		var container = $('div.baner').children('ul');
+		var slider = new Slider( container, $('.slider-nav') );
+
+		slider.nav.find('button').on('click', function() {
+			slider.setCurrent( $(this).data('dir') );
+			slider.transition();
+		});
+
+		//define slider behavior after resizing the window
+		$(window).resize(function() {
+			var cur_item_width = $(".baner").width();
+			$(".resp-w-item").css('width', cur_item_width);
+			slider.resize_transition();
+		})
+	})();
+</script>
+
+{% endblock %}
