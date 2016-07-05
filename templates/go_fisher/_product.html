@@ -1,0 +1,12 @@
+{% load staticfiles %}
+
+<div class="stock-item col-md-3 col-sm-4 col-lg-3 {{ hidden }}">
+    <div class="stock-item-wrap">
+        <a href="{{ url|default:'/' }}" class="stock-a"><img src="{%  static 'img/goods/18460347.jpg' %}" alt="item"></a>
+        <a href="{{ url|default:'/' }}" class="stock-name">{{ name|default:'Леска Prologic XLNT HP Camo Леска Prologic XLNT HP Camo Леска Prologic XLNT HP Camo' }}</a>
+        <div class="info-row">
+            <div class="price">{{ price|default:"0 грн." }}</div>
+            <div class="brand"><img src="{%  static 'img/vrnt113961_525.jpg' %}" alt="brand"></div>
+        </div>
+    </div>
+</div>

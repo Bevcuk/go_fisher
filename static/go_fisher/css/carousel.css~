@@ -1,0 +1,68 @@
+.carousel {
+  position: relative;
+  width: 100%;
+  padding: 10px 40px;
+  top: 10px;
+  margin-bottom: 20px;
+}
+
+.carousel img {
+  width: 190px;
+  height: 190px;
+  margin: 0 auto;
+  /* по умолчанию inline, в ряде браузеров это даст лишнее пространство вокруг элементов */
+
+  display: block;
+}
+
+.arrow {
+  position: absolute;
+  top: 85px;
+  padding: 0;
+  font-size: 28px;
+  line-height: 24px;
+  display: block;
+}
+
+.arrow:focus {
+  outline: none;
+}
+
+.arrow:hover {
+  cursor: pointer;
+}
+
+.prev {
+  left: 7px;
+}
+
+.next {
+  right: 7px;
+}
+
+.gallery {
+  width: 100%;
+  overflow: hidden;
+}
+
+.gallery ul {
+  height: 190px;
+<<<<<<< HEAD
+  width: 100%;
+=======
+  width: 9999px;
+>>>>>>> jul
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  transition: margin-left 250ms;
+  /* remove white-space between inline-block'ed li */
+  /* http://davidwalsh.name/remove-whitespace-inline-block */
+
+  font-size: 0;
+}
+
+.gallery li {
+  display: inline-block;
+  padding-left: 25px; 
+}
