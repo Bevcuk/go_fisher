@@ -32,7 +32,6 @@ class OrderStatus(models.Model):
 								default=OPERATED)
 	priority = models.IntegerField(blank=True, null=True)
 
-# should be rewrited too
 class Payment(models.Model):
 	payment = models.CharField(max_length=25)
 	priority = models.IntegerField(blank=True, null=True)
