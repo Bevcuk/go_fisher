@@ -21,5 +21,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^', include('startpage.urls')),
+    url(r'^basket/', include('basket.urls')),
+    url(r'^ordering/', include('ordering.urls')),
+    url(r'^product/', include('product.urls')),
     url(r'^admin/', admin.site.urls),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
