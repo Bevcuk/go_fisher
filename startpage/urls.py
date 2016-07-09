@@ -1,9 +1,6 @@
-from django.conf import settings
-from django.conf.urls import include, url
-from django.conf.urls.static import static
-
-from . import views
+from django.conf.urls import url
+from startpage.views import IndexView
 
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
-] 
+    url(r'^$', IndexView.as_view(), name="home_list"),
+]

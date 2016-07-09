@@ -62,55 +62,20 @@
 		<div class="container">
 			<div class="row">
 				<div class="category-title">Відбір по категорії</div>
-				<div class="subcategory-section col-md-3 col-sm-3 col-lg-3 col-xs-5">
-					<div class="subcategory-item ">
-						<a href="/" class="subc-a"><img src="{% static 'img/categories/fish-udo4g5.png' %}" alt="category"></a>
-						<a href="/" class="subc-name">Риболовні снасті</a>
-						<a href="/" class="subc-s-item">Вудилища</a>
-						<a href="/" class="subc-s-item">Котушки</a>
-						<a href="/" class="subc-s-item">Садки</a>
-						<a href="/" class="subc-s-item">Сигналізатори клюву</a>
-						<a href="/" class="subc-s-item">Спецінструменти</a>
-					</div>		
-				</div>
-				<div class="subcategory-section col-md-3 col-sm-3 col-lg-3 col-xs-5 ">
-					<div class="subcategory-item">
-						<a href="/" class="subc-a"><img src="{% static 'img/categories/fish-montajvz.png' %}" alt="category"></a>
-						<a href="/" class="subc-name">Оснащення</a>
-						<a href="/" class="subc-s-item">Крючки</a>
-						<a href="/" class="subc-s-item">Грузила</a>
-						<a href="/" class="subc-s-item">Поплавки</a>
-						<a href="/" class="subc-s-item">Поплавки</a>
-						<a href="/" class="subc-s-item">Джиг-головки</a>
-						<a href="/" class="subc-s-item">Карабіни і застібки</a>
-						<a href="/" class="subc-s-item">Повідки для хижаків</a>
-					</div>		
-				</div>
-				<div class="subcategory-section col-md-3 col-sm-3 col-lg-3 col-xs-5">
-					<div class="subcategory-item">
-						<a href="/" class="subc-a"><img src="{% static 'img/categories/fish-primanww.png' %}" alt="category"></a>
-						<a href="/" class="subc-name">Приманки і прикормки</a>
-						<a href="/" class="subc-s-item">Мормишки</a>
-						<a href="/" class="subc-s-item">Балансири</a>
-						<a href="/" class="subc-s-item">Воблери</a>
-						<a href="/" class="subc-s-item">Силікон</a>
-						<a href="/" class="subc-s-item">Прикормки</a>
-						<a href="/" class="subc-s-item">Сухі добавки</a>
-						<a href="/" class="subc-s-item">Спреї</a>
-					</div>		
-				</div>
-				<div class="subcategory-section col-md-3 col-sm-3 col-lg-3 col-xs-5">
-					<div class="subcategory-item">
-						<a href="/" class="subc-a"><img src="{% static 'img/categories/fish-boat-komve.png' %}" alt="category"></a>
-						<a href="/" class="subc-name">Аксесуари риболовні</a>
-						<a href="/" class="subc-s-item">Збереження і транспортування</a>
-						<a href="/" class="subc-s-item">Ехолоти</a>
-						<a href="/" class="subc-s-item">Карпові кораблики</a>
-						<a href="/" class="subc-s-item">Полотенця і фартухи</a>
-						<a href="/" class="subc-s-item">Кобри, ракети і рогатки</a>
-						<a href="/" class="subc-s-item">Надувні човни</a>
-					</div>		
-				</div>
+                {% for bigcategory in home_list %}
+                    <div class="subcategory-section col-md-3 col-sm-3 col-lg-3 col-xs-5">
+                        <div class="subcategory-item">
+                            <a href="/" class="subc-a"><img src="{% static 'img/categories/fish-boat-komve.png' %}" alt="category"></a>
+                            <a class="subc-name">{{ bigcategory.name }}</a>
+                            <a href="/" class="subc-s-item">Збереження і транспортування</a>
+                            <a href="/" class="subc-s-item">Ехолоти</a>
+                            <a href="/" class="subc-s-item">Карпові кораблики</a>
+                            <a href="/" class="subc-s-item">Полотенця і фартухи</a>
+                            <a href="/" class="subc-s-item">Кобри, ракети і рогатки</a>
+                            <a href="/" class="subc-s-item">Надувні човни</a>
+                        </div>
+				    </div>
+                {% endfor %}
 			</div>
 		</div>
 	</div>
@@ -118,50 +83,20 @@
         <div class="container">
             <div class="row">
                 <div class="kind-title col-md-12 col-lg-12 col-sm-12">Відбір за призначенням</div>
-
                     <div class="kind-section col-lg-12 col-md-12">
                         <div class="kind">
-                        <figure class="subkind-item">
-                            <a href="/" class="subk-a"><img src="{% static 'img/kinds/kind-6.png' %}" alt="kind"></a>
-                            <figcaption><a href="/" class="subk-name">Карпова <br> ловля</a></figcaption>
-                        </figure>
-
-                        <figure class="subkind-item">
-                        <a href="/" class="subk-a"><img src="{% static 'img/kinds/kind-1.png' %}" alt="kind"></a>
-                        <figcaption><a href="/" class="subk-name">Спінінгова <br> ловля</a></figcaption>
-                        </figure>
-
-
-                        <figure class="subkind-item ">
-                            <a href="/" class="subk-a"><img src="{% static 'img/kinds/kind-3.png' %}" alt="kind"></a>
-                            <figcaption><a href="/" class="subk-name">Поплавочна <br> ловля</a></figcaption>
-                        </figure>
-
-                        <figure class="subkind-item ">
-                            <a href="/" class="subk-a"><img src="{% static 'img/kinds/kind-4.png' %}" alt="kind"></a>
-                            <figcaption><a href="/" class="subk-name">Кастингова <br> ловля</a></figcaption>
-                    </figure>
-
-                        <figure class="subkind-item ">
-                            <a href="/" class="subk-a"><img src="{% static 'img/kinds/kind-2.png' %}" alt="kind"></a>
-                            <figcaption><a href="/" class="subk-name">Фідерна <br> ловля</a></figcaption>
-                    </figure>
-
-                        <figure class="subkind-item ">
-                            <a href="/" class="subk-a"><img src="{% static 'img/kinds/kind-5.png' %}" alt="kind"></a>
-                            <figcaption><a href="/" class="subk-name">Нахлистова <br> ловля</a></figcaption>
-                    </figure>
-                        <figure class="subkind-item ">
-                            <a href="/" class="subk-a"><img src="{% static 'img/kinds/kind-7.png' %}" alt="kind"></a>
-                            <figcaption><a href="/" class="subk-name">Морська <br> ловля</a></figcaption>
-                        </figure>
-                        <figure class="subkind-item ">
-                        <a href="/" class="subk-a"><img src="{% static 'img/kinds/kind-8.png' %}" alt="kind"></a>
-                        <figcaption><a href="/" class="subk-name">Зимня <br>ловля</a></figcaption>
-                    </figure>
-                </div>
-                </div>
-
+                            {% for kind in kind_list %}
+                                <figure class="subkind-item">
+                                    {% with i=forloop.counter|stringformat:"s" %}
+                                        {% with 'img/kinds/kind-'|add:i|add:'.png' as image_src %}
+                                            <a href="/" class="subk-a"><img src="{% static image_src %}" alt="kind"></a>
+                                        {% endwith %}
+                                    {% endwith %}
+                                    <figcaption><a href="/" class="subk-name">{{ kind.name }}</a></figcaption>
+                                </figure>
+                            {% endfor %}
+                        </div>
+                    </div>
             </div>
         </div>
     </div>
