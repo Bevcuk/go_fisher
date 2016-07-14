@@ -65,16 +65,23 @@
                 {% for bigcategory in home_list %}
                     <div class="subcategory-section col-md-3 col-sm-3 col-lg-3 col-xs-5">
                         <div class="subcategory-item">
-                            <a href="/" class="subc-a"><img src="{% static 'img/categories/fish-boat-komve.png' %}" alt="category"></a>
-                            <a class="subc-name">{{ bigcategory.name }}</a>
-                            <a href="/" class="subc-s-item">Збереження і транспортування</a>
-                            <a href="/" class="subc-s-item">Ехолоти</a>
-                            <a href="/" class="subc-s-item">Карпові кораблики</a>
-                            <a href="/" class="subc-s-item">Полотенця і фартухи</a>
-                            <a href="/" class="subc-s-item">Кобри, ракети і рогатки</a>
-                            <a href="/" class="subc-s-item">Надувні човни</a>
+                            <div class="subc-a">
+                                {% with i=forloop.counter|stringformat:"s" %}
+                                    {% with 'img/categories/fish-part-'|add:i|add:'.png' as big_cat_src %}
+                                        <img src="{% static big_cat_src %}" alt="category">
+                                    {% endwith %}
+                                {% endwith %}
+                            </div>
+
+                            <p class="subc-name">{{ bigcategory.name }}</p>
+
+                            {% for category in category_list %}
+                                {% if category.big_category == bigcategory %}
+                                    <a href="/" class="subc-s-item">{{ category.name }}</a>
+                                {% endif %}
+                            {% endfor %}
                         </div>
-				    </div>
+                    </div>
                 {% endfor %}
 			</div>
 		</div>

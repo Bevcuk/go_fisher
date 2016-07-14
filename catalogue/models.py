@@ -7,7 +7,7 @@ class BigCategory(models.Model):
 
 class Category(models.Model):
 	name = models.CharField(max_length=45)
-	big_category = models.ManyToManyField(BigCategory)
+	big_category = models.ForeignKey(BigCategory, default=1)
 	def __str__(self):
 		return self.name
 
