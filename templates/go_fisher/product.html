@@ -1,0 +1,160 @@
+{% extends "__base.html" %}
+{% load staticfiles %}
+
+{% block main_style %}
+    <link rel="stylesheet" href="{% static 'css/_product.min.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+			<div class="row">
+				<ul class="breadcrumb">
+					<li><a href="#">Головна</a></li>
+					<li><a href="#">Спінінги</a></li>
+					<li class="active">Favorite</li>
+				</ul>
+			</div>
+                <div class="row">
+                    <div class="col-xxs-12 col-xs-12 col-md-12">
+						<h1 class="product-name-element">{{ product.title }}</h1>
+					</div>
+				</div>
+				<div class="row main-sect">
+					<div class="col-xxs-12 col-xs-7 col-md-4 col-lg-4">
+						<div class="product-main-photo">
+							<a href="/" class="new-a"><img src="{% static product.image.all.first.slice_ref %}" alt="item"></a>
+						</div>
+					</div>
+					<div class="info-sect col-xxs-12 col-xs-5 col-md-4 col-lg-4">
+						<div class="product_image_options">
+							<img src="{% static product.brand.slice_ref %}" alt="">
+						</div>
+						<div class="pi_price_wrp" >
+							<span class="price_num">{{ product.price }} грн</span>
+						</div>
+
+						<input value="Купити" name="add2cart" type="submit" title="додати в корзину" class="add2cart_handler" rel="">
+
+						<div class="pb_stock">
+							Наявність: <span style="color: #709C42;">✔</span>
+						</div>
+						<div class="pi_shippay_buttons_wrp">
+							<div class="ship_row">
+								<img src="{% static 'img/deliveri.png' %}" alt="" width="25" height="25">
+								<a href="">Умови доставки та оплати</a>
+							</div>
+							<div class="ship_row">
+								<img src="{% static 'img/fa-shield.png' %}" alt="" width="25" height="25">
+								<a>Гарантійні зобов'язання</a>
+							</div>
+						</div>
+					</div>
+					<div class=" col-md-4 col-lg-4 hidden-xs hidden-sm">
+					<div class="main_row_cell ">
+					<div class="top_prod_title">
+						<span>Рекомендуємо
+							<span class="tp_five">3</span>
+						</span>
+					</div>
+						<div class="box">
+                            {% for recommend in recommendations %}
+                                <div class="product_brief_topprod ">
+                                    <div class="brief_topprod_image">
+                                        <a href="" class="col-lg-4 col-md-5 "><img src="{% static 'img/goods/18460347.jpg'%}" alt="" width="200" height="100"></a>
+                                    </div>
+                                    <div class="product_brief_topprod_right col-lg-8 col-md-7 hidden-xs">
+                                        <div class="brief_topprod_image">
+                                            <a class="pb_product_name" href="">{{ recommend.title }}</a>
+                                        </div>
+                                        <div class="pb_price">
+                                             <span class="price_num">{{ recommend.price }} грн</span>
+                                        </div>
+                                        <div class="buy">
+                                            <button type="button" title="Add to Cart" class="button btn-cart">
+                                            <span>Купити</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid-description col-lg-12 col-md-12">
+		    <div class="container">
+                <div class="section-title">
+					<h3>Характеристика товару :</h3>
+				</div>
+				<div id="product-info" class="row push-bottom">
+				    <div class="col-xs-12 col-md-6 pull-right">
+                        <h4>{{ product.title }}</h4>
+                        <p>{{ product.description }}</p>
+                    </div>
+                    <div class="col-xs-8 col-md-5">
+                        <div class="table-container">
+                            <table class="table-condensed">
+                                <tbody>
+                                    <tr>
+                                        <td>№ товару</td>
+                                        <td>{{ product.id }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Бренд</td>
+                                        <td>{{ product.brand }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Категорія</td>
+                                        <td>{{ product.from_id.category_name }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Підкатегорія</td>
+                                        <td>{{ product.from_id.subcategory_name }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Вид ловлі</td>
+                                        <td>
+                                            {% for kind in kinds %}
+                                                {{ kind.name }} <br>
+                                            {% endfor %}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>{{ product.mesurer_name }}, {{ product.measurer }}</td>
+                                        <td>{{ product.value_mesure }}</td>
+                                    </tr>
+                                    {% for key, value in product.extra_to_dict.items %}
+                                        <tr>
+                                            <td>{{ key }}</td>
+                                            <td>{{ value }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+				    </div>
+				</div>
+            </div>
+        </div>
+
+			<div class="recommendations col-lg-12 col-md-12">
+				<div class="row">
+					<div class="nav-tabs"><span>Клієнти також обрали:</span></div>
+				</div>
+				<div class="tab-pane">
+					<div class="row">
+                        <div class="popular">
+                            <div class="container">
+                                <div class="row">
+                                    {% for item in popular %}
+                                        {% include '_product.html' %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+					</div>
+				</div>
+			</div>
+{% endblock %}

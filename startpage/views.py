@@ -8,7 +8,6 @@ from product.models import Kind
 
 
 class IndexView(ListView):
-
 	context_object_name = 'home_list'
 	template_name = 'index.html'
 	queryset = BigCategory.objects.all()
