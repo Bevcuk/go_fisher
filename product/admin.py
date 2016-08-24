@@ -7,7 +7,15 @@ from .models import Special
 from .models import Image
 from .models import Kind
 
-admin.site.register(Product)
+
+class ProductAdmin(admin.ModelAdmin):
+    class Media:
+        js = (
+            'js/jquery-latest.min.js',
+            'js/adminscripts.js',
+        )
+
+admin.site.register(Product, ProductAdmin)
 admin.site.register(ProductFrom)
 admin.site.register(Brand)
 admin.site.register(Special)

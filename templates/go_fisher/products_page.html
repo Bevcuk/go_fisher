@@ -1,0 +1,99 @@
+{% extends "__base.html" %}
+{% load staticfiles %}
+
+{% block main_style %}
+    <link rel="stylesheet" href="{% static 'css/_products_page.min.css' %}">
+{% endblock %}
+
+{% block content %}
+
+	<div class="wpr">
+
+		<div class="container">
+			<div class="row">
+				<ul class="breadcrumb">
+					<li><a href="#">Головна</a></li>
+					<li><a href="#">Каталог</a></li>
+					<li class="active">Вудилища</li>
+				</ul>
+				<div class="filter-btn hidden-lg hidden-md">Фільтр</div>
+			</div>
+			<div class="col-md-3 col-sm-12">
+				<div class="filter">
+					<div class="part">
+						<div class="title">{{ category.category_id }}</div>
+						<ul>
+                            {% for subcategory in subcategories %}
+                                {% if subcategory.category_id == category.category_id %}
+                                    <li><a href="/">{{ subcategory.subcategory_id }}</a></li>
+                                {% endif %}
+                            {% endfor %}
+						</ul>
+					</div>
+
+					<form class="advance_search">
+						<div class="title">Фільтр товарів</div>
+						<div class="price col-md-12 col-sm-3">
+							<div class="sect-title">Ціна</div>
+							<div class="value">
+								від
+								<input type="number" value="0" min="0"><br/> до &nbsp;<input type="number" value="1290" min="0" max="99999">
+							</div>
+						</div>
+						<div class="companies col-md-12 col-sm-4">
+							<div class="sect-title">Бренд</div>
+                                <div class="comp-wrapper">
+                                    {% for product_brand in products_brands %}
+                                        <input type="checkbox">{{ product_brand }}<br />
+							        {% endfor %}
+                                </div>
+                        </div>
+						<div class="metric col-md-12 col-sm-2">
+							<div class="sect-title">Довжина</div>
+							<div class="length-wrapper">
+								<input type="checkbox">1<br />
+                                <input type="checkbox">2<br />
+								<input type="checkbox">3<br />
+								<input type="checkbox">4<br />
+							</div>
+						</div>
+						<div class="col-md-12">
+							<input type="submit" value="Застосувати">
+						</div>
+					</form>
+                    <div class="clear"></div>
+                </div>
+			</div>
+
+			<div class="col-md-9 col-sm-12">
+				<div class="overview-wrp unique">
+					{% for product in products %}
+                        {% include '_catalogue_product.html' with product=product %}
+
+                    {% endfor %}
+				</div>
+
+				<div class="clear"></div>
+				<div class="row">
+					<ul class="pagination">
+						<li>
+							<a href="#" aria-label="Previous">
+							<span aria-hidden="true">&laquo;</span>
+							</a>
+						</li>
+						<li class="active"><a href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">5</a></li>
+						<li>
+							<a href="#" aria-label="Next">
+							<span aria-hidden="true">&raquo;</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

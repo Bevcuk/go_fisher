@@ -44,12 +44,7 @@ $(document).ready(function() {
 		return true;
 	}));
 
-	//SVG Fallback
-	if(!Modernizr.svg) {
-		$("img[src*='svg']").attr("src", function() {
-			return $(this).attr("src").replace(".svg", ".png");
-		});
-	};
+
 
 	//Аякс отправка форм
 	//Документация: http://api.jquery.com/jquery.ajax/

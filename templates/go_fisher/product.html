@@ -102,16 +102,12 @@
                                         <td>{{ product.id }}</td>
                                     </tr>
                                     <tr>
-                                        <td>Бренд</td>
-                                        <td>{{ product.brand }}</td>
-                                    </tr>
-                                    <tr>
                                         <td>Категорія</td>
-                                        <td>{{ product.from_id.category_name }}</td>
+                                        <td>{{ product.from_id.category_id.name }}</td>
                                     </tr>
                                     <tr>
                                         <td>Підкатегорія</td>
-                                        <td>{{ product.from_id.subcategory_name }}</td>
+                                        <td>{{ product.from_id.subcategory_id.name }}</td>
                                     </tr>
                                     <tr>
                                         <td>Вид ловлі</td>
@@ -120,6 +116,10 @@
                                                 {{ kind.name }} <br>
                                             {% endfor %}
                                         </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Бренд</td>
+                                        <td>{{ product.brand }}</td>
                                     </tr>
                                     <tr>
                                         <td>{{ product.mesurer_name }}, {{ product.measurer }}</td>

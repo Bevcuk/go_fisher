@@ -7,11 +7,7 @@ class ProductFrom(models.Model):
 	subcategory_id = models.ForeignKey(Subcategory, on_delete=models.PROTECT)
 	category_id = models.ForeignKey(Category, on_delete=models.PROTECT)
 	def __str__(self):
-		return u'%s: %s' % (self.category_id, self.subcategory_id)
-	def category_name(self):
-		return self.category_id
-	def subcategory_name(self):
-		return self.subcategory_id
+		return u'%s: %s - %s' % (self.category_id, self.subcategory_id, self.subcategory_id.extra_parameters)
 
 class Image(models.Model):
 	JPEG = 'JPEG'
@@ -68,8 +64,9 @@ class Product(models.Model):
 		)
 	title = models.CharField(max_length=50)
 	description = models.TextField(null=True)
-	image = models.ManyToManyField(Image)
+	image = models.ManyToManyField(Image, related_name='images')
 	brand = models.ForeignKey(Brand, on_delete=models.PROTECT)
+	model = models.CharField(max_length=50, null=True, blank=True)
 	from_id = models.ForeignKey(ProductFrom, on_delete=models.PROTECT)
 	kind = models.ManyToManyField(Kind)
 	special = models.ManyToManyField(Special, null=True)
@@ -99,6 +96,8 @@ class Product(models.Model):
 	def extra_to_dict(self):
 		py_dict =json.loads(self.extra_parameters_json)
 		return py_dict
+	def subcategory_extra(self):
+		return self.from_id.subcategory_id.extra_parameters
 
 # clothe models
 class Size(models.Model):

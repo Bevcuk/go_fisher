@@ -47,7 +47,7 @@
 					<div class="counter">4</div>
 					<img src="{% static 'img/basket2.png' %}" alt="basket" /></a>
 					<div class="enter" style="background-image: url({% static 'img/icons/enter.png' %});">
-					<a href="/">Увійти</a>
+					<a href="{% url 'authentication:login' %}">Увійти</a>
 				</div>
 			</div>
 		</div>
