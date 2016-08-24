@@ -1,0 +1,48 @@
+{% extends "__base.html" %}
+{% load staticfiles %}
+{% block main_style %}
+    <link rel="stylesheet" href="{% static 'css/_authorization.min.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="wpr">
+		<div class="container">
+			<div class="col-md-6 col-md-offset-3">
+				<div class="auth">
+					<div class="cont">
+						<h2>Авторизація</h2>
+						<div class="col-md-12">
+                            <form action="/auth/login/" method="post">
+                             {% csrf_token %}
+                            <div class="form-group">
+                                {% if login_error %}
+                                   <label class="error">{{ login_error }} </label>
+                                {% endif %}
+                                </div>
+							<div class="form-group">
+								<label for="input_email">
+									 Ваш логін *
+								</label>
+								<input name="username" id="input_email" type="text" class="form-control" placeholder="Name" value>
+							</div>
+							<div class="form-group">
+								<label for="input_password">
+									 Пароль *
+								</label>
+								<input name="password" id="input_password" type="password" class="form-control" placeholder="●●●●●●●●●●" value>
+							</div>
+							<div class="form-group-b">
+								<a href="#">Забули пароль?</a>
+								<button type="submit" class="btn" >Увійти</button>
+							</div>
+							<div class="form-group-s">
+								Досі не зареєстровані?&nbsp;&nbsp;&nbsp;<a href="#">Реєстрація</a>
+							</div>
+						</div>
+                    </form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock content %}

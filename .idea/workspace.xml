@@ -1,35 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d9f213ce-2f0e-4819-801c-c3519904d596" name="Default" comment="commit for Lily, just look">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/catalogue/urls.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/go_fisher/_catalogue_product.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/go_fisher/catalogue.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/go_fisher/products_page.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basket/templates/basket/basket.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ordering/templates/ordering/ordering.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/product/templates/product/product.html" afterPath="" />
+    <list default="true" id="d9f213ce-2f0e-4819-801c-c3519904d596" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/go_fisher/static/go_fisher/img/categories/11l.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/go_fisher/static/go_fisher/img/categories/4vo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/go_fisher/static/go_fisher/img/categories/6xx.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/go_fisher/static/go_fisher/img/categories/80p.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/go_fisher/static/go_fisher/img/categories/muliplikatort1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/go_fisher/static/go_fisher/img/categories/Безинерцыонные-катушкиcm.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/go_fisher/static/go_fisher/img/categories/дополнительные-шпулиsp.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/go_fisher/static/go_fisher/img/products/18460347_oP1jM54.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/go_fisher/static/go_fisher/img/subcategories/11l.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/go_fisher/static/go_fisher/img/subcategories/4vo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/go_fisher/static/go_fisher/img/subcategories/6xx.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/go_fisher/static/go_fisher/img/subcategories/80p.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/go_fisher/img/subcategories/11l.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/go_fisher/img/subcategories/4vo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/go_fisher/img/subcategories/6xx.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/go_fisher/img/subcategories/80p.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/authentication/forms.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/authentication/templates/authentication/confirm_expired.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/authentication/templates/authentication/login.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/authentication/templates/authentication/register.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/authentication/templates/authentication/success.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/authentication/urls.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/catalogue/migrations/0004_subcategory_image.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/catalogue/migrations/0005_auto_20160721_0847.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/catalogue/migrations/0006_subcategory_extra_parameters.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/catalogue/migrations/0007_auto_20160814_1344.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/catalogue/migrations/0008_auto_20160814_1346.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/product/migrations/0012_product_model.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/go_fisher/js/adminscripts.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/authentication/admin.py" afterPath="$PROJECT_DIR$/authentication/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/authentication/migrations/0001_initial.py" afterPath="$PROJECT_DIR$/authentication/migrations/0001_initial.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/authentication/models.py" afterPath="$PROJECT_DIR$/authentication/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/authentication/views.py" afterPath="$PROJECT_DIR$/authentication/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/catalogue/admin.py" afterPath="$PROJECT_DIR$/catalogue/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/catalogue/models.py" afterPath="$PROJECT_DIR$/catalogue/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/catalogue/views.py" afterPath="$PROJECT_DIR$/catalogue/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/go_fisher/urls.py" afterPath="$PROJECT_DIR$/go_fisher/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/product/admin.py" afterPath="$PROJECT_DIR$/product/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/product/models.py" afterPath="$PROJECT_DIR$/product/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/product/urls.py" afterPath="$PROJECT_DIR$/product/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/product/views.py" afterPath="$PROJECT_DIR$/product/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/go_fisher/css/_catalogue.min.css" afterPath="$PROJECT_DIR$/static/go_fisher/css/_catalogue.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/go_fisher/css/_footer.min.css" afterPath="$PROJECT_DIR$/static/go_fisher/css/_footer.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/go_fisher/css/_products_page.min.css" afterPath="$PROJECT_DIR$/static/go_fisher/css/_products_page.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/go_fisher/js/common.js" afterPath="$PROJECT_DIR$/static/go_fisher/js/common.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/go_fisher/__base.html" afterPath="$PROJECT_DIR$/templates/go_fisher/__base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/go_fisher/_header.html" afterPath="$PROJECT_DIR$/templates/go_fisher/_header.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/go_fisher/_menu.html" afterPath="$PROJECT_DIR$/templates/go_fisher/_menu.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/go_fisher/product.html" afterPath="$PROJECT_DIR$/templates/go_fisher/product.html" />
     </list>
     <ignored path="go_fisher.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -60,8 +62,8 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/go_fisher/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="23" column="15" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
+            <state relative-caret-position="432">
+              <caret line="27" column="48" selection-start-line="27" selection-start-column="48" selection-end-line="27" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -662,7 +664,14 @@
       <option name="project" value="LOCAL" />
       <updated>1468090302188</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="commit after forgotten git">
+      <created>1472068203904</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1472068203904</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -676,6 +685,7 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22222222" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935917" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -686,7 +696,6 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -730,7 +739,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="main style for specific page moved to block tag" />
     <MESSAGE value="commit for Lily, just look" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit for Lily, just look" />
+    <MESSAGE value="commit after forgotten git" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit after forgotten git" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -989,6 +999,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1091,8 +1102,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/go_fisher/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="23" column="15" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
+        <state relative-caret-position="432">
+          <caret line="27" column="48" selection-start-line="27" selection-start-column="48" selection-end-line="27" selection-end-column="48" />
           <folding />
         </state>
       </provider>
