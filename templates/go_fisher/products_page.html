@@ -1,5 +1,6 @@
 {% extends "__base.html" %}
 {% load staticfiles %}
+{% load catalogue_filters %}
 
 {% block main_style %}
     <link rel="stylesheet" href="{% static 'css/_products_page.min.css' %}">
@@ -21,11 +22,12 @@
 			<div class="col-md-3 col-sm-12">
 				<div class="filter">
 					<div class="part">
-						<div class="title">{{ category.category_id }}</div>
-						<ul>
+                        <div class="title">{{ category.category_id }}</div>
+                        <ul>
                             {% for subcategory in subcategories %}
                                 {% if subcategory.category_id == category.category_id %}
-                                    <li><a href="/">{{ subcategory.subcategory_id }}</a></li>
+                                    <li><a href="{{ category.category_id.slug }}-{{ subcategory.subcategory_id.slug}}"
+                                            {% if request.path|partition_url == subcategory.subcategory_id.slug %} class="active" {% endif %}>{{ subcategory.subcategory_id }}</a></li>
                                 {% endif %}
                             {% endfor %}
 						</ul>
@@ -37,7 +39,7 @@
 							<div class="sect-title">Ціна</div>
 							<div class="value">
 								від
-								<input type="number" value="0" min="0"><br/> до &nbsp;<input type="number" value="1290" min="0" max="99999">
+								<input type="number" value="0" min="0"><br/> до &nbsp;<input type="number" value="{{ max_price }}" min="0" max="{{ max_price }}">
 							</div>
 						</div>
 						<div class="companies col-md-12 col-sm-4">
@@ -48,7 +50,7 @@
 							        {% endfor %}
                                 </div>
                         </div>
-						<div class="metric col-md-12 col-sm-2">
+<!-- 						<div class="metric col-md-12 col-sm-2">
 							<div class="sect-title">Довжина</div>
 							<div class="length-wrapper">
 								<input type="checkbox">1<br />
@@ -56,7 +58,7 @@
 								<input type="checkbox">3<br />
 								<input type="checkbox">4<br />
 							</div>
-						</div>
+						</div> -->
 						<div class="col-md-12">
 							<input type="submit" value="Застосувати">
 						</div>
@@ -69,12 +71,13 @@
 				<div class="overview-wrp unique">
 					{% for product in products %}
                         {% include '_catalogue_product.html' with product=product %}
-
                     {% endfor %}
 				</div>
+			</div>
 
-				<div class="clear"></div>
-				<div class="row">
+			<div class="clear"></div>
+			<div class="col-sm-12">	
+				<div class="paging-wpr">
 					<ul class="pagination">
 						<li>
 							<a href="#" aria-label="Previous">

@@ -1,11 +1,23 @@
 <div class="container">
 	<div class="col-md-12">
 		<ul>
-			<li><a href="/">Головна</a></li>
-			<li><a href="{% url 'catalogue' %}">Каталог</a></li>
-			<li><a href="/">Акції</a></li>
-			<li><a href="#">Сервіс</a></li>
-			<li><a href="#">Контакти</a></li>
+            {% url 'startpage:home_page' as url %}
+            <li {% if request.path == url %} class="active" {% endif %} >
+                <a href="{{ url }}">Головна</a>
+            </li>
+            {% url 'catalogue:catalog_main' as url %}
+            <li {% if request.path == url %} class="active" {% endif %} >
+                <a href="{{ url }}">Каталог</a>
+            </li>
+			<li>
+                <a href="">Акції</a>
+            </li>
+			<li>
+                <a href="">Сервіс</a>
+            </li>
+			<li>
+                <a href="">Контакти</a>
+            </li>
 		</ul>
 	</div>
 </div>

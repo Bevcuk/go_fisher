@@ -11,7 +11,6 @@ class Product_details(DetailView):
     # ??? do you really need it
     queryset = Product.objects.all()
 
-
     def get_queryset(self):
         self.product = get_object_or_404(Product, pk=self.kwargs['pk'])
         return Product.objects.filter(pk=self.product.id)

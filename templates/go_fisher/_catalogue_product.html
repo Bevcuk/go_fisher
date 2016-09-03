@@ -3,10 +3,10 @@
 
 <div class="col-sm-4 col-md-4 col-lg-3">
     <div class="item">
-        <a href="{% url 'product_details' product.id %}" class="stock-a">
+        <a href="{% url 'product:product_details' product.id %}" class="stock-a">
             <img src="{%  static product.image.first.slice_ref %}" alt="photo">
         </a>
-        <a href="{% url 'product_details' product.id %}" class="stock-name">{{ product.title }}</a>
+        <a href="{% url 'product:product_details' product.id %}" class="stock-name">{{ product.title }}</a>
         <div class="info-row">
             <div class="price">{{ product.price }} грн.</div>
             <div class="brand"><img src="{%  static product.brand.slice_ref %}" alt="brand"></div>

@@ -12,7 +12,7 @@
 				<div class="main-nav">
 					<nav>
                         {% for category in category_list %}
-                            <a href="/" class="subc-s-item">{{ category }}</a>
+                            <a href="#{{ category.slug }}" class="subc-s-item">{{ category }}</a>
                         {% endfor %}
                     </nav>
 				</div>
@@ -22,7 +22,7 @@
 				<div class="overview-wrp unique">
 					{% for category in category_list %}
                         <div class="one-cat">
-                            <div class="title"><a name="vudu"></a>{{ category }}</div>
+                            <div class="title"><a name="{{ category.slug }}"></a>{{ category }}</div>
                             {% for one_comb in comb_list %}
                                 {% if one_comb.category_id == category %}
                                     <div class="col-sm-4 col-md-4 col-lg-3">
@@ -31,12 +31,11 @@
                                                 <img src="{% static one_comb.subcategory_id.slice_ref %}">
                                             </a>
                                             <figcaption>
-                                                <a href="{{ one_comb.category_id.slug }}-{{ one_comb.subcategory_id }}" class="sub-name">{{ one_comb.subcategory_id }}</a>
+                                                <a href="{{ one_comb.category_id.slug }}-{{ one_comb.subcategory_id.slug }}" class="sub-name">{{ one_comb.subcategory_id }}</a>
                                             </figcaption>
                                         </figure>
                                     </div>
                                 {% endif %}
-                                
                             {% endfor %}    
     
                         </div>
