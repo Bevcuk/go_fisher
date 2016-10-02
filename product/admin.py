@@ -14,6 +14,7 @@ class ProductAdmin(admin.ModelAdmin):
             'js/jquery-latest.min.js',
             'js/adminscripts.js',
         )
+    # prepopulated_fields = {'slug_params_json': ('extra_parameters_json', )}
 
 admin.site.register(Product, ProductAdmin)
 admin.site.register(ProductFrom)

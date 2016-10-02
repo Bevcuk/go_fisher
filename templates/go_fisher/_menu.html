@@ -6,7 +6,7 @@
                 <a href="{{ url }}">Головна</a>
             </li>
             {% url 'catalogue:catalog_main' as url %}
-            <li {% if request.path == url %} class="active" {% endif %} >
+            <li {% if url in request.path %} class="active" {% endif %} >
                 <a href="{{ url }}">Каталог</a>
             </li>
 			<li>

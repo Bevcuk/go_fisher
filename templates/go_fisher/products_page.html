@@ -26,43 +26,48 @@
                         <ul>
                             {% for subcategory in subcategories %}
                                 {% if subcategory.category_id == category.category_id %}
-                                    <li><a href="{{ category.category_id.slug }}-{{ subcategory.subcategory_id.slug}}"
-                                            {% if request.path|partition_url == subcategory.subcategory_id.slug %} class="active" {% endif %}>{{ subcategory.subcategory_id }}</a></li>
+                                    <li><a href="{% url 'catalogue:products_page' category.category_id.slug subcategory.subcategory_id.slug %}"
+                                        {% if subcategory.subcategory_id.slug in request.path|partition_url %} class="active" {% endif %}>{{ subcategory.subcategory_id }}</a></li>
                                 {% endif %}
                             {% endfor %}
 						</ul>
 					</div>
 
-					<form class="advance_search">
-						<div class="title">Фільтр товарів</div>
-						<div class="price col-md-12 col-sm-3">
-							<div class="sect-title">Ціна</div>
-							<div class="value">
-								від
-								<input type="number" value="0" min="0"><br/> до &nbsp;<input type="number" value="{{ max_price }}" min="0" max="{{ max_price }}">
-							</div>
-						</div>
-						<div class="companies col-md-12 col-sm-4">
-							<div class="sect-title">Бренд</div>
-                                <div class="comp-wrapper">
-                                    {% for product_brand in products_brands %}
-                                        <input type="checkbox">{{ product_brand }}<br />
-							        {% endfor %}
+                    {% if products %}
+                        <form class="advance_search" method="GET" >
+                            <div class="title">Фільтр товарів</div>
+                            {% with request.path as cur_url %}
+                                <div class="price col-md-12 col-sm-3">
+                                    <div class="sect-title">Ціна</div>
+                                    <div class="value">
+                                        від
+                                        <input type="number" name="from_price" value="0" min="0" max="{{ max_price }}"><br/>
+                                        до &nbsp;<input type="number" name="to_price" value="{{ max_price }}" min="0" max="{{ max_price }}">
+                                        </div>
+                                    </div>
+                                <div class="companies col-md-12 col-sm-4">
+                                    <div class="sect-title">Бренд</div>
+                                    <div class="comp-wrapper">
+                                        {% for product_brand in products_brands %}
+                                            {% create_full_param 'brand'|ctm_slugify product_brand|ctm_slugify as sluged_new_item %}
+                                                <a href="{{ cur_url|check_right_url:sluged_new_item }}" class="filter-item">{{ product_brand }}</a>
+                                        {% endfor %}
+                                    </div>
                                 </div>
-                        </div>
-<!-- 						<div class="metric col-md-12 col-sm-2">
-							<div class="sect-title">Довжина</div>
-							<div class="length-wrapper">
-								<input type="checkbox">1<br />
-                                <input type="checkbox">2<br />
-								<input type="checkbox">3<br />
-								<input type="checkbox">4<br />
-							</div>
-						</div> -->
-						<div class="col-md-12">
-							<input type="submit" value="Застосувати">
-						</div>
-					</form>
+                                {% for key, value in extra_params.extra_to_dict.items %}
+                                    <div class="col-md-12 col-sm-4">
+                                        <div class="sect-title">{{ key }}</div>
+                                        <div class="extra-params-wrapper">
+                                            {% for parameter in value|split_by:'/' %}
+                                                {% create_full_param key|ctm_slugify parameter|ctm_slugify as sluged_new_item %}
+                                                    <a href="{{ cur_url|check_right_url:sluged_new_item}}" class="filter-item">{{ parameter }}</a>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            {% endwith %}
+                        </form>
+                    {% endif %}
                     <div class="clear"></div>
                 </div>
 			</div>
@@ -71,6 +76,8 @@
 				<div class="overview-wrp unique">
 					{% for product in products %}
                         {% include '_catalogue_product.html' with product=product %}
+                    {% empty %}
+                        <h4>Обрана категорія поки що порожня</h4>
                     {% endfor %}
 				</div>
 			</div>
@@ -100,3 +107,16 @@
 		</div>
 	</div>
 {% endblock %}
+
+{#{% block rel_scripts %}#}
+{#<script type="text/javascript" src="{%  static 'js/jquery.mCustomScrollbar.concat.min.js'%}"></script>#}
+{##}
+{#<script>#}
+{#    (function(){#}
+{#        $(window).on("load", function(){#}
+{#            $(".comp-wrapper").mCustomScrollbar();#}
+{#            $(".extra-params-wrapper").mCustomScrollbar();#}
+{#        });#}
+{#    })();#}
+{#</script>#}
+{#{% endblock %}#}

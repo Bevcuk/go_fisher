@@ -2,6 +2,8 @@ from django.db import models
 from decimal import Decimal
 from catalogue.models import Subcategory, Category
 import json
+import re
+import unidecode
 
 class ProductFrom(models.Model):
 	subcategory_id = models.ForeignKey(Subcategory, on_delete=models.PROTECT)
@@ -79,25 +81,41 @@ class Product(models.Model):
 	is_best_offer = models.BooleanField()
 	is_active = models.BooleanField()
 	is_new = models.BooleanField()
-	value_mesure = models.PositiveSmallIntegerField()
-	measurer = models.CharField(max_length=2,
-							choices=TYPE_OF_MEASUREMENTS,
-							default=WEIGHT)
+	# value_mesure = models.PositiveSmallIntegerField()
+	# measurer = models.CharField(max_length=2,
+	# 						choices=TYPE_OF_MEASUREMENTS,
+	# 						default=WEIGHT)
 	extra_parameters_json = models.TextField(null=True)
+	slug_params_json = models.TextField(blank=True, null=True)
 	def __str__(self):
 		return self.title
-	def mesurer_name(self):
-		if self.measurer == 'см':
-			return 'Довжина'
-		elif self.measurer == 'гр':
-			return 'Вага'
-		elif self.measurer == 'шт':
-			return 'Кількість'
+	# for creating sluged json-like field
+	def save(self):
+		extra_dict = json.loads(self.extra_parameters_json)
+		slug_extra_list = []
+		for key, value in extra_dict.items():
+			uni_key = unidecode.unidecode(key).lower()
+			sluged_key = re.sub(r'\W+', '-', uni_key)
+
+			uni_value = unidecode.unidecode(value).lower()
+			sluged_value = re.sub(r'\W+', '-', uni_value)
+
+			slug_extra_list.append(sluged_key + '=' + sluged_value)
+		self.slug_params_json = slug_extra_list
+		super(Product, self).save()
+
 	def extra_to_dict(self):
-		py_dict =json.loads(self.extra_parameters_json)
+		py_dict = json.loads(self.extra_parameters_json)
 		return py_dict
-	def subcategory_extra(self):
-		return self.from_id.subcategory_id.extra_parameters
+
+    #
+	# def mesurer_name(self):
+	# 	if self.measurer == 'см':
+	# 		return 'Довжина'
+	# 	elif self.measurer == 'гр':
+	# 		return 'Вага'
+	# 	elif self.measurer == 'шт':
+	# 		return 'Кількість'
 
 # clothe models
 class Size(models.Model):

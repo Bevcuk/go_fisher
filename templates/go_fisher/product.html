@@ -121,10 +121,6 @@
                                         <td>Бренд</td>
                                         <td>{{ product.brand }}</td>
                                     </tr>
-                                    <tr>
-                                        <td>{{ product.mesurer_name }}, {{ product.measurer }}</td>
-                                        <td>{{ product.value_mesure }}</td>
-                                    </tr>
                                     {% for key, value in product.extra_to_dict.items %}
                                         <tr>
                                             <td>{{ key }}</td>

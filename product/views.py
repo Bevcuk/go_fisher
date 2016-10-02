@@ -9,7 +9,7 @@ class Product_details(DetailView):
     context_object_name = 'product'
     template_name = 'product.html'
     # ??? do you really need it
-    queryset = Product.objects.all()
+    # queryset = Product.objects.all()
 
     def get_queryset(self):
         self.product = get_object_or_404(Product, pk=self.kwargs['pk'])
